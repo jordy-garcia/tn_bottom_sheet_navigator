@@ -4,7 +4,7 @@
 
 This plugin allows Flutter apps to handle internal navigation inside a modal bottom sheet with adjustable height based on the content.
 
-<img src="https://github.com/jordy-garcia/tn_bottom_sheet_navigator/blob/main/images/sample.gif">
+<img src="https://raw.githubusercontent.com/jordy-garcia/tn_bottom_sheet_navigator/main/images/sample.gif">
 
 ## Platform Support
 

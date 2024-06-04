@@ -2,7 +2,7 @@ name: tn_bottom_sheet_navigator
 description: >-
   A modal bottom sheet with internal navigation and dynamic size (height)
   based on content.
-version: 0.0.2
+version: 0.0.3
 repository: https://github.com/jordy-garcia/tn_bottom_sheet_navigator
 
 environment:
