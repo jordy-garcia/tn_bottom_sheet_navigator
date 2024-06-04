@@ -3,6 +3,17 @@ import 'package:tn_bottom_sheet_navigator/core/entities/tn_bottom_sheet_settings
 import 'package:tn_bottom_sheet_navigator/extensions/tn_context_extensions.dart';
 import 'package:tn_bottom_sheet_navigator/widgets/tn_bottom_sheet_navigator_builder.dart';
 
+/// {@template showTnBottomSheetNavigator}
+/// Method to invoke the bottom sheet navigator
+///
+/// Required Params:
+///   - context -> build context
+///   - initialPath -> initial route that should be loaded at start
+///
+/// Optional Params:
+///   - params -> route parameters to be sent in the builder of the route
+///   - settings -> navigator settings
+/// {@endtemplate}
 Future<T?> showTnBottomSheetNavigator<T>({
   required BuildContext context,
   required String initialPath,

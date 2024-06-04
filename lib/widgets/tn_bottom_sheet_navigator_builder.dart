@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:tn_bottom_sheet_navigator/core/entities/tn_bottom_sheet_route.dart';
 import 'package:tn_bottom_sheet_navigator/extensions/tn_context_extensions.dart';
 
+/// {@template TnBottomSheetNavigatorBuilder}
+/// Widget for route builder inside the ModalBottomSheet
+/// {@endtemplate}
 class TnBottomSheetNavigatorBuilder extends StatelessWidget {
   const TnBottomSheetNavigatorBuilder({super.key});
 

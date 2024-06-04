@@ -39,22 +39,49 @@ class TnRouter {
     return instance;
   }
 
+  /// {@template setRoutes}
+  /// Method to initialize the routes
+  /// {@endtemplate}
   void setRoutes(List<TnBottomSheetRoute> routes) {
-    print(routes);
     _routes = routes;
   }
 
+  /// {@template stream}
+  /// stream to listen the navigation stack changes
+  /// {@endtemplate}
   Stream<TnBottomSheetRoute?> get stream => _controller.stream;
+
+  /// {@template canPop}
+  /// boolean to know if the stack can be pop or not
+  /// {@endtemplate}
   bool get canPop => count > 1;
+
+  /// {@template isOpened}
+  /// boolean to control if the bottom navigator is opened to avoid overlap
+  /// {@endtemplate}
   bool get isOpened => _isOpened;
+
+  /// {@template count}
+  /// int to get the amount of routes in the stack
+  /// {@endtemplate}
   int get count => _stack.length;
+
+  /// {@template lastRoute}
+  /// TnBottomSheetRoute that contains the last route added in the stack
+  /// {@endtemplate}
   TnBottomSheetRoute? get lastRoute => _stack.last;
 
+  /// {@template initialize}
+  /// Method to initialize the bottom navigator
+  /// {@endtemplate}
   void initialize() {
     _controller = StreamController();
     _isOpened = true;
   }
 
+  /// {@template Go}
+  /// Method to clear stack and nav to path
+  /// {@endtemplate}
   void go(
     String path, {
     Map<String, dynamic>? params,
@@ -63,6 +90,9 @@ class TnRouter {
     push(path, params: params);
   }
 
+  /// {@template Push}
+  /// Method to add new route in the stack
+  /// {@endtemplate}
   void push(
     String path, {
     Map<String, dynamic>? params,
@@ -75,6 +105,9 @@ class TnRouter {
     }
   }
 
+  /// {@template Pop}
+  /// Method to nav backward in the navigation stack
+  /// {@endtemplate}
   void pop() {
     if (_stack.isNotEmpty) {
       _stack.removeLast();
@@ -82,10 +115,16 @@ class TnRouter {
     }
   }
 
+  /// {@template Clear}
+  /// Method to clear navigation stack
+  /// {@endtemplate}
   void clear() {
     _stack.clear();
   }
 
+  /// {@template Dispose}
+  /// Method to dispose streams and reset opened variable
+  /// {@endtemplate}
   void dispose() {
     clear();
     _isOpened = false;
