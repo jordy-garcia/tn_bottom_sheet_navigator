@@ -9,16 +9,22 @@ const homeSampleRoutePath = 'home-sample';
 
 final sampleRoute = TnBottomSheetRoute(
   path: sampleRoutePath,
-  builder: (_, __) => const Text(
-    'sample',
-    key: sampleRouteKey,
+  builder: (_, __) => const Directionality(
+    textDirection: TextDirection.ltr,
+    child: Text(
+      'sample',
+      key: sampleRouteKey,
+    ),
   ),
 );
 final homeSampleRoute = TnBottomSheetRoute(
   path: homeSampleRoutePath,
-  builder: (_, __) => const Text(
-    'home-sample',
-    key: homeSampleRouteKey,
+  builder: (_, __) => const Directionality(
+    textDirection: TextDirection.ltr,
+    child: Text(
+      'home-sample',
+      key: homeSampleRouteKey,
+    ),
   ),
 );
 

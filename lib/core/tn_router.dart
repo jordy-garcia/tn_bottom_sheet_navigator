@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:tn_bottom_sheet_navigator/core/entities/tn_bottom_sheet_route.dart';
 
 /// {@template TnRouter}
@@ -31,12 +32,15 @@ class TnRouter {
   /// {@endtemplate}
   bool _isOpened = false;
 
-  static final TnRouter instance = TnRouter._internal();
+  static TnRouter _instance = TnRouter._internal();
+
+  @visibleForTesting
+  static set instance(TnRouter val) => _instance = val;
 
   TnRouter._internal();
 
   factory TnRouter() {
-    return instance;
+    return _instance;
   }
 
   /// {@template setRoutes}

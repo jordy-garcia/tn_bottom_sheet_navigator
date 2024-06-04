@@ -10,7 +10,7 @@ extension TnContextExtensions on BuildContext {
   /// {@template tnRouter}
   /// Getter for TnRouter instance (Singleton)
   /// {@endtemplate}
-  TnRouter get tnRouter => TnRouter.instance;
+  TnRouter get tnRouter => TnRouter();
 
   /// {@template setRoutes}
   /// Method to show Bottom Sheet Navigator

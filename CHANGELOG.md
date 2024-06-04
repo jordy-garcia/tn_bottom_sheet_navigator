@@ -1,3 +1,8 @@
+## 0.0.4
+
+- Test Coverage at 93.8%
+- Add missing docs
+
 ## 0.0.3
 
 - Add Example project
