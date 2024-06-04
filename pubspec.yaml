@@ -1,6 +1,9 @@
 name: tn_bottom_sheet_navigator
-description: "Modal bottom sheet with internal navigation"
+description: >-
+  A modal bottom sheet with internal navigation and dynamic size (height)
+  based on content.
 version: 0.0.1
+repository: https://github.com/jordy-garcia/tn_bottom_sheet_navigator
 
 environment:
   sdk: ">=3.4.1 <4.0.0"
@@ -18,3 +21,7 @@ dev_dependencies:
   mockito: ^5.4.4
 
 flutter:
+
+platforms:
+  android:
+  ios:
