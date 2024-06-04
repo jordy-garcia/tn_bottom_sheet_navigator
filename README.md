@@ -1,6 +1,10 @@
 # TnBottomSheetNavigator
 
+[![Pub](https://img.shields.io/pub/v/tn_bottom_sheet_navigator.svg?logo=flutter&color=blue&style=flat-square)](https://pub.dev/packages/tn_bottom_sheet_navigator)
+
 This plugin allows Flutter apps to handle internal navigation inside a modal bottom sheet with adjustable height based on the content.
+
+<img src="https://github.com/jordy-garcia/tn_bottom_sheet_navigator/tree/main/images/sample.gif?raw=true">
 
 ## Platform Support
 
@@ -65,6 +69,17 @@ void _onOpenBottomNav(BuildContext context) {
 ```
 
 This will open the modal bottom sheet navigator with default settings (TnBottomSheetSettings) and no params for initial path. In the pages consumed inside the bottom sheet navigator you can use the following methods to handle internal navigation.
+
+For TnBottomSheetSettings the options are:
+
+```dart
+TnBottomSheetSettings(
+    bool isDismisable = false,
+    bool isScrollControlled = true,
+    bool useRootNavigator = true,
+    BoxConstraints? constraints,
+)
+```
 
 ### Navigation
 

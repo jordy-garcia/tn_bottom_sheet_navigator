@@ -10,8 +10,6 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
-  flutter:
-    sdk: flutter
   equatable: ^2.0.5
 
 dev_dependencies:
@@ -20,8 +18,9 @@ dev_dependencies:
   flutter_lints: ^3.0.0
   mockito: ^5.4.4
 
-flutter:
-
 platforms:
   android:
   ios:
+
+funding:
+  - https://buymeacoffee.com/jordyg
