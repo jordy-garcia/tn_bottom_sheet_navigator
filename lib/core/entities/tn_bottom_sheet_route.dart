@@ -21,7 +21,8 @@ class TnBottomSheetRoute extends Equatable {
   /// {@template route_builder}
   /// The builder method to create the widget
   /// {@endtemplate}
-  final Function(BuildContext context, Map<String, dynamic> params) builder;
+  final Widget Function(BuildContext context, Map<String, dynamic> params)
+      builder;
 
   /// {@template route_params}
   /// The params for the route, this is most used while navigation
