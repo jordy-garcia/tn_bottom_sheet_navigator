@@ -104,3 +104,37 @@ context.tnRouter.push('forgot-password', params: { 'email': 'test@email.com' });
 # Open bottom nav on initialPath with params
 context.showTnBottomSheetNav('forgot-password', params: { 'email': 'test@email.com' });
 ```
+
+### TnBottomSheetScaffold
+
+You can use our custom scaffold to have an implicit navigation control
+
+```dart
+return TnBottomSheetScaffold(
+    appBar: TnBottomSheetAppBar(title: 'Sign in'),
+    child: Container(...),
+);
+```
+
+This will return an scaffold and a TnBottomSheetAppBar which will show the arrow back if the router can pop.
+
+You can customize the TnBottomSheetAppBar with the following props:
+
+```dart
+TnBottomSheetAppBar(
+    title: // String title
+    customTitle: // Widget for custom title (if you need an image or something more complex that just a string). If String title is passed customTitle won't be displayed
+    showCloseIcon: // Bool to controls whether to show or not a close icon (This can close the bottomSheet no matter what dismissable value was passed in props)
+    theme: // TnBottomSheetAppBarTheme to customize the style of some of the elements of the TnBottomSheetAppBar
+)
+```
+
+For the TnBottomSheetAppBarTheme you can customize the following props:
+
+```dart
+TnBottomSheetAppBarTheme(
+    closeIconSize: // Icon size for closeIcon button
+    titleTextTyle: // TextStyle for String title
+    padding: // TnBottomSheetAppBar padding
+)
+```
