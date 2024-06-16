@@ -1,3 +1,8 @@
+## 0.0.5
+
+- Add TnBottomSheetScaffold & TnBottomSheetAppBar
+- Change example project to display new features
+
 ## 0.0.4
 
 - Test Coverage at 93.8%
