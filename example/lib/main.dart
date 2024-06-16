@@ -18,7 +18,7 @@ void main() {
     ),
     TnBottomSheetRoute(
       path: 'signin',
-      builder: (_, __) => const SignInPage(),
+      builder: (_, __) => SignInPage(),
     ),
     TnBottomSheetRoute(
       path: 'signup',
@@ -36,8 +36,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'TnBottomSheetNavigator Sample',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
+        primaryColor: Colors.lightBlue,
       ),
       home: const AppContent(),
     );
