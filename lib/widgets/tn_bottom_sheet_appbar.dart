@@ -54,7 +54,10 @@ class TnBottomSheetAppBar extends StatelessWidget {
           SizedBox(
             width: 40,
             child: context.tnRouter.canPop
-                ? BackButton(onPressed: () => context.tnRouter.pop())
+                ? BackButton(
+                    key: const Key('tn_bottom_sheet_appbar_backbutton'),
+                    onPressed: () => context.tnRouter.pop(),
+                  )
                 : const SizedBox.shrink(),
           ),
           Expanded(
@@ -65,6 +68,7 @@ class TnBottomSheetAppBar extends StatelessWidget {
             width: 40,
             child: showCloseIcon
                 ? IconButton(
+                    key: const Key('tn_bottom_sheet_appbar_closeicon'),
                     onPressed: () => Navigator.of(context).pop(),
                     icon: Icon(
                       Icons.close,
@@ -84,6 +88,7 @@ class TnBottomSheetAppBar extends StatelessWidget {
   }) {
     if (title != null) {
       return Center(
+        key: const Key('tn_bottom_sheet_appbar_title'),
         child: Text(
           title!,
           style: theme.titleTextStyle,

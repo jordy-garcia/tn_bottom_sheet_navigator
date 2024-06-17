@@ -11,8 +11,11 @@ import 'tn_bottom_sheet_trigger_test.mocks.dart';
   MockSpec<TnRouter>(),
 ])
 void main() {
-  TnRouter.instance = MockTnRouter();
-  final router = TnRouter();
+  late TnRouter router;
+
+  setUp(() {
+    router = TnRouter.instance = MockTnRouter();
+  });
 
   group('showTnBottomSheetNavigator', () {
     testWidgets('it invokes initialize and go methods from router',

@@ -40,10 +40,14 @@ Future<T?> showTnBottomSheetNavigator<T>({
         ),
     builder: (context) => PopScope(
       canPop: settings.isDismisable && router.canPop,
-      onPopInvoked: (_) {
+      onPopInvoked: (didPop) {
         if (router.canPop) {
           router.pop();
           return;
+        }
+
+        if (!didPop && settings.isDismisable) {
+          Navigator.pop(context);
         }
       },
       child: const TnBottomSheetNavigatorBuilder(),
