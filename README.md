@@ -85,13 +85,13 @@ TnBottomSheetSettings(
 
 ```dart
 # Push -> Add new route in the stack
-context.tnRouter.push('signup');
+context.tnPush('signup');
 
 # Go -> Clear navigation stack
-context.tnRouter.go('signup');
+context.tnGo('signup');
 
 # Pop -> Removes last route in the stack
-context.tnRouter.pop();
+context.tnPop();
 ```
 
 ### Navigation with parameters
@@ -99,7 +99,7 @@ context.tnRouter.pop();
 You can send params on the navigation, you'll have to use the params property, which receives a Map<String, dynamic> object.
 
 ```dart
-context.tnRouter.push('forgot-password', params: { 'email': 'test@email.com' });
+context.tnPush('forgot-password', params: { 'email': 'test@email.com' });
 
 # Open bottom nav on initialPath with params
 context.showTnBottomSheetNav('forgot-password', params: { 'email': 'test@email.com' });
