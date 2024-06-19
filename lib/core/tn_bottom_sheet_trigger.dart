@@ -26,7 +26,11 @@ Future<T?> showTnBottomSheetNavigator<T>({
 
   final router = context.tnRouter
     ..initialize()
-    ..go(initialPath, params: params);
+    ..go(
+      initialPath,
+      params: params,
+      context: context,
+    );
 
   final response = await showModalBottomSheet(
     context: context,
@@ -39,7 +43,7 @@ Future<T?> showTnBottomSheetNavigator<T>({
           maxHeight: MediaQuery.of(context).size.height * .9,
         ),
     builder: (context) => PopScope(
-      canPop: settings.isDismisable && router.canPop,
+      canPop: settings.isDismisable && !router.canPop,
       onPopInvoked: (didPop) {
         if (router.canPop) {
           router.pop();

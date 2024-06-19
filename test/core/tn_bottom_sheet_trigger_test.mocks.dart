@@ -5,9 +5,10 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i3;
 
+import 'package:flutter/material.dart' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:tn_bottom_sheet_navigator/core/entities/tn_bottom_sheet_route.dart'
-    as _i4;
+    as _i5;
 import 'package:tn_bottom_sheet_navigator/core/tn_router.dart' as _i2;
 
 // ignore_for_file: type=lint
@@ -28,11 +29,11 @@ import 'package:tn_bottom_sheet_navigator/core/tn_router.dart' as _i2;
 /// See the documentation for Mockito's code generation for more information.
 class MockTnRouter extends _i1.Mock implements _i2.TnRouter {
   @override
-  _i3.Stream<_i4.TnBottomSheetRoute?> get stream => (super.noSuchMethod(
+  _i3.Stream<List<_i4.Widget>> get stream => (super.noSuchMethod(
         Invocation.getter(#stream),
-        returnValue: _i3.Stream<_i4.TnBottomSheetRoute?>.empty(),
-        returnValueForMissingStub: _i3.Stream<_i4.TnBottomSheetRoute?>.empty(),
-      ) as _i3.Stream<_i4.TnBottomSheetRoute?>);
+        returnValue: _i3.Stream<List<_i4.Widget>>.empty(),
+        returnValueForMissingStub: _i3.Stream<List<_i4.Widget>>.empty(),
+      ) as _i3.Stream<List<_i4.Widget>>);
 
   @override
   bool get canPop => (super.noSuchMethod(
@@ -56,7 +57,7 @@ class MockTnRouter extends _i1.Mock implements _i2.TnRouter {
       ) as int);
 
   @override
-  void setRoutes(List<_i4.TnBottomSheetRoute>? routes) => super.noSuchMethod(
+  void setRoutes(List<_i5.TnBottomSheetRoute>? routes) => super.noSuchMethod(
         Invocation.method(
           #setRoutes,
           [routes],
@@ -77,12 +78,16 @@ class MockTnRouter extends _i1.Mock implements _i2.TnRouter {
   void go(
     String? path, {
     Map<String, dynamic>? params,
+    required _i4.BuildContext? context,
   }) =>
       super.noSuchMethod(
         Invocation.method(
           #go,
           [path],
-          {#params: params},
+          {
+            #params: params,
+            #context: context,
+          },
         ),
         returnValueForMissingStub: null,
       );
@@ -91,12 +96,16 @@ class MockTnRouter extends _i1.Mock implements _i2.TnRouter {
   void push(
     String? path, {
     Map<String, dynamic>? params,
+    required _i4.BuildContext? context,
   }) =>
       super.noSuchMethod(
         Invocation.method(
           #push,
           [path],
-          {#params: params},
+          {
+            #params: params,
+            #context: context,
+          },
         ),
         returnValueForMissingStub: null,
       );

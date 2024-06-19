@@ -49,7 +49,7 @@ class SignInPage extends StatelessWidget {
             ),
             TextButton(
               child: const Text('Do you forgot your password?'),
-              onPressed: () => context.tnRouter.push(
+              onPressed: () => context.tnPush(
                 'forgot-password',
                 params: {
                   "email": _emailController.value.text,
@@ -59,7 +59,7 @@ class SignInPage extends StatelessWidget {
             const SizedBox(height: 20),
             TextButton(
               child: const Text('Does not have an account? Sign Up'),
-              onPressed: () => context.tnRouter.push('signup'),
+              onPressed: () => context.tnPush('signup'),
             ),
           ],
         ),

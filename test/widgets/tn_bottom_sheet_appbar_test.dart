@@ -5,6 +5,7 @@ import 'package:mockito/mockito.dart';
 import 'package:tn_bottom_sheet_navigator/tn_bottom_sheet_navigator.dart';
 
 import '../core/tn_bottom_sheet_trigger_test.mocks.dart';
+import '../core/tn_router_test.mocks.dart';
 import '../test_utils/mock_data.dart';
 
 import 'tn_bottom_sheet_appbar_test.mocks.dart';
@@ -14,6 +15,8 @@ import 'tn_bottom_sheet_appbar_test.mocks.dart';
 ])
 void main() {
   final router = TnRouter()..setRoutes(sampleRouteList);
+  final BuildContext testContext = MockBuildContext();
+
   group('TnBottomSheetAppBar', () {
     test('it should render with default props', () {
       const sut = TnBottomSheetAppBar();
@@ -84,8 +87,8 @@ void main() {
     testWidgets(
         'if TnRouter has routes in the stack it should render the arrowback button',
         (tester) async {
-      router.push(sampleRoutePath);
-      router.push(homeSampleRoutePath);
+      router.push(sampleRoutePath, context: testContext);
+      router.push(homeSampleRoutePath, context: testContext);
       await tester.pumpWidget(
         const MaterialApp(
           home: TnBottomSheetAppBar(),

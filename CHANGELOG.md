@@ -1,3 +1,7 @@
+## 0.0.6
+
+- Change streambuild for an indexed stack to preserve pages state
+
 ## 0.0.5
 
 - Add TnBottomSheetScaffold & TnBottomSheetAppBar

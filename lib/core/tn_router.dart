@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:tn_bottom_sheet_navigator/core/entities/tn_bottom_sheet_route.dart';
 
 /// {@template TnRouter}
@@ -20,12 +21,12 @@ class TnRouter {
   /// {@template tn_router_navigation_stack}
   /// Private list to hold the navigation stack
   /// {@endtemplate}
-  final List<TnBottomSheetRoute> _stack = [];
+  final List<Widget> _stack = [];
 
   /// {@template tn_router_stream_controller}
   /// Private stream controller to emit events and publish the route to be rendered
   /// {@endtemplate}
-  StreamController<TnBottomSheetRoute?> _controller = StreamController();
+  StreamController<List<Widget>> _streamController = StreamController();
 
   /// {@template tn_router_opened_control}
   /// Private bool to handle the opened status
@@ -53,7 +54,7 @@ class TnRouter {
   /// {@template stream}
   /// stream to listen the navigation stack changes
   /// {@endtemplate}
-  Stream<TnBottomSheetRoute?> get stream => _controller.stream;
+  Stream<List<Widget>> get stream => _streamController.stream;
 
   /// {@template canPop}
   /// boolean to know if the stack can be pop or not
@@ -70,16 +71,11 @@ class TnRouter {
   /// {@endtemplate}
   int get count => _stack.length;
 
-  /// {@template lastRoute}
-  /// TnBottomSheetRoute that contains the last route added in the stack
-  /// {@endtemplate}
-  TnBottomSheetRoute? get lastRoute => _stack.last;
-
   /// {@template initialize}
   /// Method to initialize the bottom navigator
   /// {@endtemplate}
   void initialize() {
-    _controller = StreamController();
+    _streamController = StreamController();
     _isOpened = true;
   }
 
@@ -89,9 +85,14 @@ class TnRouter {
   void go(
     String path, {
     Map<String, dynamic>? params,
+    required BuildContext context,
   }) {
     clear();
-    push(path, params: params);
+    push(
+      path,
+      params: params,
+      context: context,
+    );
   }
 
   /// {@template Push}
@@ -100,12 +101,14 @@ class TnRouter {
   void push(
     String path, {
     Map<String, dynamic>? params,
+    required BuildContext context,
   }) {
     final route = _routes.where((r) => r.path == path).firstOrNull;
     if (route != null) {
       final routeWithParams = route.copyWith(params: params);
-      _stack.add(routeWithParams);
-      _controller.add(routeWithParams);
+      final widget = route.builder(context, routeWithParams.params);
+      _stack.add(widget);
+      _streamController.add(_stack);
     }
   }
 
@@ -115,7 +118,7 @@ class TnRouter {
   void pop() {
     if (_stack.isNotEmpty) {
       _stack.removeLast();
-      _controller.add(_stack.lastOrNull);
+      _streamController.add(_stack);
     }
   }
 
@@ -132,6 +135,6 @@ class TnRouter {
   void dispose() {
     clear();
     _isOpened = false;
-    _controller.close();
+    _streamController.close();
   }
 }

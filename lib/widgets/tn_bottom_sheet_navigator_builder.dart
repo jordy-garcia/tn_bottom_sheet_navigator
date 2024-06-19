@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tn_bottom_sheet_navigator/core/entities/tn_bottom_sheet_route.dart';
 import 'package:tn_bottom_sheet_navigator/extensions/tn_context_extensions.dart';
 
 /// {@template TnBottomSheetNavigatorBuilder}
@@ -14,14 +13,25 @@ class TnBottomSheetNavigatorBuilder extends StatelessWidget {
       padding: EdgeInsets.only(
         bottom: MediaQuery.viewInsetsOf(context).bottom,
       ),
-      child: StreamBuilder<TnBottomSheetRoute?>(
+      child: StreamBuilder<List<Widget>>(
         stream: context.tnRouter.stream,
         builder: (context, state) {
-          if (state.connectionState == ConnectionState.active) {
-            final route = state.data!;
-            return route.builder(
-              context,
-              route.params,
+          if (state.hasData && state.data!.isNotEmpty) {
+            final widgets = state.data!;
+            final activeIndex = widgets.length - 1;
+
+            return IndexedStack(
+              index: activeIndex,
+              children: widgets
+                  .asMap()
+                  .keys
+                  .map(
+                    (i) => SizedBox(
+                      height: i == activeIndex ? null : 1,
+                      child: widgets[i],
+                    ),
+                  )
+                  .toList(),
             );
           }
           return const SizedBox.shrink();

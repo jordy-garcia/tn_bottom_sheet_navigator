@@ -12,6 +12,28 @@ extension TnContextExtensions on BuildContext {
   /// {@endtemplate}
   TnRouter get tnRouter => TnRouter();
 
+  void tnGo(
+    String path, {
+    Map<String, dynamic>? params,
+  }) =>
+      TnRouter().go(
+        path,
+        context: this,
+        params: params,
+      );
+
+  void tnPush(
+    String path, {
+    Map<String, dynamic>? params,
+  }) =>
+      TnRouter().push(
+        path,
+        context: this,
+        params: params,
+      );
+
+  void tnPop() => TnRouter().pop();
+
   /// {@template setRoutes}
   /// Method to show Bottom Sheet Navigator
   /// {@endtemplate}
