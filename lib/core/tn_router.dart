@@ -24,7 +24,7 @@ class TnRouter {
   final List<Widget> _stack = [];
 
   /// {@template tn_router_stream_controller}
-  /// Private stream controller to emit events and publish the route to be rendered
+  /// Private stream controller to emit events and publish the new stack
   /// {@endtemplate}
   StreamController<List<Widget>> _streamController = StreamController();
 
