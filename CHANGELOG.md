@@ -1,3 +1,7 @@
+## 0.0.8
+
+- Fix Android devices nav buttons navigation
+
 ## 0.0.7
 
 - Update docs

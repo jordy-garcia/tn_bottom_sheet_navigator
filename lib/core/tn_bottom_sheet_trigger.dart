@@ -43,7 +43,7 @@ Future<T?> showTnBottomSheetNavigator<T>({
           maxHeight: MediaQuery.of(context).size.height * .9,
         ),
     builder: (context) => PopScope(
-      canPop: settings.isDismisable && !router.canPop,
+      canPop: false,
       onPopInvoked: (didPop) {
         if (router.canPop) {
           router.pop();
