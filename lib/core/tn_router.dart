@@ -28,7 +28,7 @@ class TnRouter {
   StreamController<List<Widget>> _streamController = StreamController();
 
   /// {@template tn_router_opened_control}
-  /// Private bool to handle the opened status
+  /// Whether is already opened
   /// {@endtemplate}
   bool _isOpened = false;
 
@@ -56,12 +56,12 @@ class TnRouter {
   Stream<List<Widget>> get stream => _streamController.stream;
 
   /// {@template canPop}
-  /// boolean to know if the stack can be pop or not
+  /// Whether the stack can be pop or not
   /// {@endtemplate}
   bool get canPop => count > 1;
 
   /// {@template isOpened}
-  /// boolean to control if the bottom navigator is opened to avoid overlap
+  /// Whether the bottom navigator is opened to avoid overlap
   /// {@endtemplate}
   bool get isOpened => _isOpened;
 

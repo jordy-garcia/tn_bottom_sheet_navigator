@@ -12,6 +12,9 @@ extension TnContextExtensions on BuildContext {
   /// {@endtemplate}
   TnRouter get tnRouter => TnRouter();
 
+  /// {@template tnGo}
+  /// Method to go in TnRouter
+  /// {@endtemplate}
   void tnGo(
     String path, {
     Map<String, dynamic>? params,
@@ -22,6 +25,9 @@ extension TnContextExtensions on BuildContext {
         params: params,
       );
 
+  /// {@template tnPush}
+  /// Method to push in TnRouter
+  /// {@endtemplate}
   void tnPush(
     String path, {
     Map<String, dynamic>? params,
@@ -32,9 +38,12 @@ extension TnContextExtensions on BuildContext {
         params: params,
       );
 
+  /// {@template tnPop}
+  /// Method to pop in TnRouter
+  /// {@endtemplate}
   void tnPop() => TnRouter().pop();
 
-  /// {@template setRoutes}
+  /// {@template showTnBottomSheetNav}
   /// Method to show Bottom Sheet Navigator
   /// {@endtemplate}
   void showTnBottomSheetNav(

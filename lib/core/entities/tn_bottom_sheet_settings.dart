@@ -17,17 +17,17 @@ import 'package:flutter/material.dart';
 /// {@endtemplate}
 class TnBottomSheetSettings {
   /// {@template settings_dismisable}
-  /// A bool to control if the bottom sheet navigator can be dismissable or not
+  /// Whether the bottom sheet navigator can be dismissable or not
   /// {@endtemplate}
   final bool isDismisable;
 
   /// {@template settings_scroll_controlled}
-  /// A bool to control if the bottom sheet navigator has dynamic height and allow scroll
+  /// Whether the bottom sheet navigator has dynamic height and allow scroll
   /// {@endtemplate}
   final bool isScrollControlled;
 
   /// {@template settings_root_navigator}
-  /// A bool to control if the bottom sheet navigator should use root navigator
+  /// Whether the bottom sheet navigator use root navigator
   /// {@endtemplate}
   final bool useRootNavigator;
 
@@ -38,7 +38,6 @@ class TnBottomSheetSettings {
 
   /// {@template settings}
   /// The constructor for the navigator settings
-  /// It has default settings for bool variables
   /// {@endtemplate}
   const TnBottomSheetSettings({
     this.isDismisable = false,
