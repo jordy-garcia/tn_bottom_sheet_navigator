@@ -9,3 +9,4 @@ export 'package:tn_bottom_sheet_navigator/widgets/tn_bottom_sheet_scaffold.dart'
 export 'package:tn_bottom_sheet_navigator/widgets/tn_bottom_sheet_appbar.dart';
 export 'package:tn_bottom_sheet_navigator/widgets/tn_bottom_sheet_appbar_theme.dart';
 export 'package:tn_bottom_sheet_navigator/widgets/tn_bottom_sheet_navigator_builder.dart';
+export 'package:tn_bottom_sheet_navigator/widgets/tn_navigator_builder.dart';

@@ -1,3 +1,7 @@
+## 0.0.9
+
+- Add TnNavigatorBuilder widget to be used in custom implementations (For example: Dialogs or CupertinoDialogs)
+
 ## 0.0.8
 
 - Fix Android devices nav buttons navigation

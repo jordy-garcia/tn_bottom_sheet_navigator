@@ -138,3 +138,43 @@ TnBottomSheetAppBarTheme(
     padding: // TnBottomSheetAppBar padding
 )
 ```
+
+### Custom Implementation (TnNavigatorBuilder)
+
+You can use the _TnNavigatorBuilder_ for a custom implementation, if you need the navigation
+inside a Dialog or somewhere else, this builder is for you.
+
+```dart
+TnNavigatorBuilder(
+    initialPath: 'signin',
+    params: {"key": "param"},
+),
+```
+
+This builder is going to render the pages starting by the _initialPath_ passed in the props. You can implemented in a dialog just like this:
+
+```dart
+showDialog(
+    context: context,
+    builder: (context) => const AlertDialog(
+        content: Material(
+            color: Colors.transparent, // This avoid an strange look on background of dialog
+            child: TnNavigatorBuilder(initialPath: 'signin'),
+        ),
+    ),
+);
+```
+
+Or for a CupertinoDialog:
+
+```dart
+showCupertinoDialog(
+    context: context,
+    builder: (context) => const CupertinoAlertDialog(
+        content: Material(
+            color: Colors.transparent, // This avoid an strange look on background of dialog
+            child: TnNavigatorBuilder(initialPath: 'signin'),
+        ),
+    ),
+);
+```

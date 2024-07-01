@@ -1,12 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tn_bottom_sheet_navigator/core/entities/tn_bottom_sheet_route.dart';
-import 'package:tn_bottom_sheet_navigator/core/entities/tn_bottom_sheet_settings.dart';
-import 'package:tn_bottom_sheet_navigator/core/tn_router.dart';
-import 'package:tn_bottom_sheet_navigator/extensions/tn_context_extensions.dart';
+import 'package:tn_bottom_sheet_navigator/tn_bottom_sheet_navigator.dart';
 
-import 'forgot_password_page.dart';
-import '../signin_page.dart';
-import '../signup_page.dart';
+import 'bottom_sheet_pages/forgot_password_page.dart';
+import 'bottom_sheet_pages/signin_page.dart';
+import 'bottom_sheet_pages/signup_page.dart';
 
 void main() {
   TnRouter().setRoutes([
@@ -64,7 +62,40 @@ class AppContent extends StatelessWidget {
                   isDismisable: true,
                 ),
               ),
-            )
+            ),
+            const SizedBox(height: 20),
+            const Text('Custom Implementations',
+                style: TextStyle(
+                  fontSize: 20,
+                )),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              child: const Text('Cupertino Dialog'),
+              onPressed: () => showCupertinoDialog(
+                context: context,
+                builder: (context) => const CupertinoAlertDialog(
+                  content: Material(
+                    color: Colors
+                        .transparent, // This avoid an strange look on background of dialog
+                    child: TnNavigatorBuilder(initialPath: 'signin'),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              child: const Text('Dialog'),
+              onPressed: () => showDialog(
+                context: context,
+                builder: (context) => const AlertDialog(
+                  content: Material(
+                    color: Colors
+                        .transparent, // This avoid an strange look on background of dialog
+                    child: TnNavigatorBuilder(initialPath: 'signin'),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
