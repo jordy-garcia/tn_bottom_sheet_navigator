@@ -44,7 +44,7 @@ Future<T?> showTnBottomSheetNavigator<T>({
         ),
     builder: (context) => PopScope(
       canPop: false,
-      onPopInvoked: (didPop) {
+      onPopInvokedWithResult: (didPop, _) {
         if (router.canPop) {
           router.pop();
           return;

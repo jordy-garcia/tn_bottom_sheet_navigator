@@ -1,3 +1,7 @@
+## 0.0.10
+
+- Fix deprecated method due to flutter 3.24 release
+
 ## 0.0.9
 
 - Add TnNavigatorBuilder widget to be used in custom implementations (For example: Dialogs or CupertinoDialogs)
