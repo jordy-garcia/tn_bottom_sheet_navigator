@@ -49,10 +49,12 @@ extension TnContextExtensions on BuildContext {
   void showTnBottomSheetNav(
     String initialPath, {
     TnBottomSheetSettings? settings,
+    Map<String, dynamic>? params,
   }) =>
       showTnBottomSheetNavigator(
         context: this,
         initialPath: initialPath,
         settings: settings ?? const TnBottomSheetSettings(),
+        params: params,
       );
 }

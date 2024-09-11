@@ -1,3 +1,7 @@
+## 0.0.11
+
+- Fix missing params prop in showTnBottomSheetNav method
+
 ## 0.0.10
 
 - Fix deprecated method due to flutter 3.24 release
